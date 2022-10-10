@@ -25,6 +25,7 @@ public class HelloApplication extends Application {
         }
     }
 
+    //asdadasdasdasd
     public static void cli(String[] args) {
         String command = args[0];
 
@@ -44,4 +45,5 @@ public class HelloApplication extends Application {
             throw new IllegalArgumentException(String.format("Isn't a command '%s'", command));
         }
     }
+    //asdasd
 }
