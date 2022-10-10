@@ -67,18 +67,14 @@ public class HelloController {
 
     private void updateChart(TextArea textArea, LineChart<String, Integer> chart) {
         String text = textArea.getText();
-
         chart.getData().clear();
-
         XYChart.Series<String, Integer> series = new XYChart.Series<>();
-
 
         char[] alphabet = encoder.getAlphabet();
         int[] histogram = encoder.getHistogram(text);
 
         for (int i = 0; i < alphabet.length; i++) {
             series.getData().add(new XYChart.Data(Character.toString(alphabet[i]), histogram[i]));
-
         }
 
         chart.getData().add(series);

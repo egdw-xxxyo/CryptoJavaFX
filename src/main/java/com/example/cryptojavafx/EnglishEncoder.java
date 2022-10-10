@@ -38,25 +38,7 @@ public class EnglishEncoder implements Encoder {
 
     @Override
     public char decode(char c, int shift) {
-        if (!inAlphabet(c)) {
-            return c;
-        }
-
-        shift = normalizeShift(shift);
-
-        if (isSmallLetter(c)) {
-            char result = (char) (c - shift);
-            if (result < smallA) {
-                result += alphabetSize;
-            }
-            return result;
-        } else {
-            char result = (char) (c - shift);
-            if (result < bigA) {
-                result += alphabetSize;
-            }
-            return result;
-        }
+        return encode(c, shift * -1);
     }
 
     public int normalizeShift(int shift) {
